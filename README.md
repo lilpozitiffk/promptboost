@@ -1,33 +1,87 @@
-This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
+# 🚀 PromptBoost: Professional Prompt Engineering Layer
 
-## Getting Started
+**PromptBoost** is a non-intrusive Chrome Extension that bridges the gap between vague user intent and high-fidelity AI output. It lives directly inside ChatGPT, Claude, and Gemini, offering one-click prompt enhancements based on professional engineering frameworks.
 
-First, run the development server:
+![Version](https://img.shields.io/badge/version-0.0.1--mvp-blue)
+![Framework](https://img.shields.io/badge/framework-Plasmo--React-orange)
+![License](https://img.shields.io/badge/license-MIT-green)
 
+---
+
+## ✨ Key Features
+
+- **Non-Intrusive UX:** Automatically detects natural typing pauses and offers an enhancement via a floating "Magic Wand" icon.
+- **6-Layer Framework:** Transforms short drafts into structured instructions using:
+  1. **Role:** Expert personas (Senior Architect, Lead Editor, etc.)
+  2. **Context:** Situational background.
+  3. **Task:** Precise verbs and clear objectives.
+  4. **Audience:** Targeted tone and style.
+  5. **Format:** Structural constraints (JSON, Markdown, Tables).
+  6. **Reasoning:** Optional Chain-of-Thought logic.
+- **Multi-Engine Support:** Choose between **Google Gemini (Free Tier)**, **Anthropic Claude (Pro)**, or high-performance **Local Mock Templates**.
+- **Universal Compatibility:** Pinned UI support for `chatgpt.com`, `claude.ai`, and `gemini.google.com`.
+
+---
+
+## 🛠️ Tech Stack
+
+- **[Plasmo](https://docs.plasmo.com/):** The professional framework for browser extensions.
+- **React & Tailwind CSS:** Modern, responsive UI components.
+- **Shadow DOM:** Complete style isolation to prevent site-level CSS conflicts.
+- **MutationObserver API:** Persistent input tracking that survives SPA navigation.
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18+)
+- [npm](https://www.npmjs.com/)
+
+### 1. Installation
 ```bash
-pnpm dev
-# or
+git clone https://github.com/YOUR_USERNAME/promptboost.git
+cd promptboost/promptboost-ext
+npm install
+```
+
+### 2. Development
+```bash
 npm run dev
 ```
 
-Open your browser and load the appropriate development build. For example, if you are developing for the chrome browser, using manifest v3, use: `build/chrome-mv3-dev`.
+### 3. Load into Chrome
+1. Open Chrome and navigate to `chrome://extensions/`.
+2. Toggle **Developer mode** (top right).
+3. Click **Load unpacked**.
+4. Select the `promptboost-ext/build/chrome-mv3-dev` folder.
 
-You can start editing the popup by modifying `popup.tsx`. It should auto-update as you make changes. To add an options page, simply add a `options.tsx` file to the root of the project, with a react component default exported. Likewise to add a content page, add a `content.ts` file to the root of the project, importing some module and do some logic, then reload the extension on your browser.
+---
 
-For further guidance, [visit our Documentation](https://docs.plasmo.com/)
+## ⚙️ Configuration
 
-## Making production build
+1. Click the **PromptBoost icon** in your browser toolbar.
+2. Select **Settings**.
+3. Toggle your preferred engine (Gemini or Claude).
+4. Paste your API Key (get a free Gemini key at [Google AI Studio](https://aistudio.google.com/app/apikey)).
+5. Click **Save Key**.
 
-Run the following:
+---
 
-```bash
-pnpm build
-# or
-npm run build
-```
+## 🗺️ Roadmap
 
-This should create a production bundle for your extension, ready to be zipped and published to the stores.
+- [x] MVP: Core 6-Layer transformation engine.
+- [x] Support for ChatGPT, Claude, and Gemini.
+- [ ] v1.1: Custom user templates and persona saving.
+- [ ] v1.2: Support for local LLMs via WebGPU (Privacy-First Mode).
+- [ ] v1.3: Analytics dashboard for prompt acceptance rates.
 
-## Submit to the webstores
+---
 
-The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/framework/workflows/submit) and you should be on your way for automated submission!
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+*Built with ❤️ for better human-AI collaboration.*
