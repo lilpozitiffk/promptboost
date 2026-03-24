@@ -1,6 +1,6 @@
 import React from "react"
 import { useStorage } from "@plasmohq/storage/hook"
-import { Wand2, Settings, ShieldCheck, ZapOff, Globe, Zap } from "lucide-react"
+import { Wand2, Settings, ShieldCheck, ZapOff, Globe, Zap, MessageSquareQuote } from "lucide-react"
 
 import "~style.css"
 
@@ -19,10 +19,15 @@ function IndexPopup() {
     }
   }
 
+  const openFeedback = () => {
+    // You can replace this URL with your actual Google Form or GitHub Issues URL later
+    window.open("https://github.com/YOUR_USERNAME/promptboost/issues/new", "_blank")
+  }
+
   return (
     <div className="plasmo-w-80 plasmo-p-6 plasmo-flex plasmo-flex-col plasmo-items-center plasmo-justify-center plasmo-text-center plasmo-bg-white plasmo-text-slate-800">
       <div className="plasmo-bg-blue-100 plasmo-p-3 plasmo-rounded-full plasmo-mb-4">
-        < Wand2 className="plasmo-w-8 plasmo-h-8 plasmo-text-blue-600" />
+        <Wand2 className="plasmo-w-8 plasmo-h-8 plasmo-text-blue-600" />
       </div>
       <h1 className="plasmo-text-xl plasmo-font-bold plasmo-mb-2">PromptBoost</h1>
       
@@ -59,16 +64,26 @@ function IndexPopup() {
         </div>
       </div>
       
-      <button 
-        onClick={openOptions}
-        className="plasmo-w-full plasmo-flex plasmo-items-center plasmo-justify-center plasmo-gap-2 plasmo-bg-white hover:plasmo-bg-slate-50 plasmo-text-slate-700 plasmo-border plasmo-border-slate-300 plasmo-px-4 plasmo-py-2 plasmo-rounded-xl plasmo-text-sm plasmo-font-semibold plasmo-transition-all"
-      >
-        <Settings className="plasmo-w-4 plasmo-h-4" />
-        Settings
-      </button>
+      <div className="plasmo-w-full plasmo-flex plasmo-flex-col plasmo-gap-2">
+        <button 
+          onClick={openOptions}
+          className="plasmo-w-full plasmo-flex plasmo-items-center plasmo-justify-center plasmo-gap-2 plasmo-bg-blue-600 hover:plasmo-bg-blue-700 plasmo-text-white plasmo-px-4 plasmo-py-2.5 plasmo-rounded-xl plasmo-text-sm plasmo-font-semibold plasmo-transition-all plasmo-shadow-sm"
+        >
+          <Settings className="plasmo-w-4 plasmo-h-4" />
+          Settings
+        </button>
+
+        <button 
+          onClick={openFeedback}
+          className="plasmo-w-full plasmo-flex plasmo-items-center plasmo-justify-center plasmo-gap-2 plasmo-bg-white hover:plasmo-bg-slate-50 plasmo-text-slate-700 plasmo-border plasmo-border-slate-300 plasmo-px-4 plasmo-py-2.5 plasmo-rounded-xl plasmo-text-sm plasmo-font-semibold plasmo-transition-all"
+        >
+          <MessageSquareQuote className="plasmo-w-4 plasmo-h-4" />
+          Give Feedback
+        </button>
+      </div>
       
       <p className="plasmo-text-xs plasmo-text-slate-400 plasmo-mt-6">
-        v0.0.1 (MVP)
+        v0.0.1 (Alpha Test)
       </p>
     </div>
   )
